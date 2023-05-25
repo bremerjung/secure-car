@@ -8,8 +8,8 @@ type Props = {
 function CarCard(props:Props) {
     return (
         <div>
-            <h1>{props.car.brand}</h1>
-            <h1>{props.car.model}</h1>
+            <h1>Brand: {props.car.brand}</h1>
+            <h1>Model: {props.car.model}</h1>
         </div>
     );
 }

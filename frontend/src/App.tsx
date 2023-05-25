@@ -14,15 +14,6 @@ export type Car = {
 
 function App() {
 
-    const [cars, setCars] = useState<Car[]>([]);
-
-    const getData = () => {
-        axios.get("/api/cars").then((response) => {
-            setCars(response.data);
-        })
-    }
-
-    useEffect(getData, [])
 
     return (
         <div className="App">
@@ -31,7 +22,7 @@ function App() {
                 <h2>ADDING CAR:</h2>
                 <Routes>
                     <Route path={"/"} element={<Homepage/>}/>
-                    <Route path={"/cars"} element={<CarGallery cars={cars}/>}/>
+                    <Route path={"/cars"} element={<CarGallery/>}/>
                 </Routes>
             </header>
         </div>
