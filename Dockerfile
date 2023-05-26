@@ -1,4 +1,4 @@
-FROM openjdk:20
+FROM openjdk:19
 
 EXPOSE 8080
 
