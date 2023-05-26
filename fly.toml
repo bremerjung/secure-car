@@ -1,9 +1,9 @@
-# fly.toml app configuration file generated for jdk20testdeploy on 2023-05-26T00:17:13+02:00
+# fly.toml app configuration file generated for jdk1920testdeploy on 2023-05-26T12:26:24+02:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = "jdk20testdeploy"
+app = "jdk1920testdeploy"
 primary_region = "ams"
 
 [http_service]
