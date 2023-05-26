@@ -1,6 +1,5 @@
-import {useEffect, useState} from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import React, {useEffect} from 'react';
+import './App.css';
 import axios from "axios";
 import {Route, Routes} from "react-router-dom";
 import Homepage from "./components/Homepage";
@@ -14,6 +13,15 @@ export type Car = {
 
 function App() {
 
+    const [cars, setCars] = React.useState<Car[]>([]);
+
+    const getData = () => {
+        axios.get("/api/cars").then((response) => {
+            setCars(response.data);
+        })
+    }
+
+    useEffect(getData, [])
 
     return (
         <div className="App">
@@ -22,7 +30,7 @@ function App() {
                 <h2>ADDING CAR:</h2>
                 <Routes>
                     <Route path={"/"} element={<Homepage/>}/>
-                    <Route path={"/cars"} element={<CarGallery/>}/>
+                    <Route path={"/cars"} element={<CarGallery cars={cars}/>}/>
                 </Routes>
             </header>
         </div>
@@ -30,4 +38,3 @@ function App() {
 }
 
 export default App;
-

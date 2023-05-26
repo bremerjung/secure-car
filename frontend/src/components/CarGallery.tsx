@@ -1,26 +1,17 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {Car} from "../App";
 import CarCard from "./CarCard";
 import {Link} from "react-router-dom";
-import axios from "axios";
 
-function CarGallery() {
+type Props = {
+    cars: Car[],
+}
 
-
-    const [cars, setCars] = useState<Car[]>([]);
-
-    const getData = () => {
-        axios.get("/api/cars").then((response) => {
-            setCars(response.data);
-        })
-    }
-
-    useEffect(getData, [])
-
+function CarGallery(props:Props) {
     return (
         <div>
             <Link to={"/"}>back</Link>
-            {cars.map((car) => (<CarCard car={car} key={car.id}/>))}
+            {props.cars.map((car) => (<CarCard car={car} key={car.id}/>))}
         </div>
     );
 }
