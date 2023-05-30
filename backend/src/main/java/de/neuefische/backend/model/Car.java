@@ -1,14 +1,12 @@
-package de.neuefische.backend;
+package de.neuefische.backend.model;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.With;
+import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 @Data
 @With
+@Builder
 @Document("Cars")
 @AllArgsConstructor
 @NoArgsConstructor

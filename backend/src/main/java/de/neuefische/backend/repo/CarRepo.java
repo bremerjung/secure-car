@@ -1,5 +1,6 @@
-package de.neuefische.backend;
+package de.neuefische.backend.repo;
 
+import de.neuefische.backend.model.Car;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,5 +1,8 @@
-package de.neuefische.backend;
+package de.neuefische.backend.controller;
 
+import de.neuefische.backend.model.Car;
+import de.neuefische.backend.model.CarDTO;
+import de.neuefische.backend.service.CarService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

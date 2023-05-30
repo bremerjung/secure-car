@@ -1,5 +1,8 @@
-package de.neuefische.backend;
+package de.neuefische.backend.service;
 
+import de.neuefische.backend.model.Car;
+import de.neuefische.backend.model.CarDTO;
+import de.neuefische.backend.repo.CarRepo;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
