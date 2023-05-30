@@ -15,7 +15,8 @@ public class CarService {
     }
 
     public Car saveCar(CarDTO car) {
-        return carRepo.save(new Car(UUID.randomUUID().toString(), car.brand(), car.model()));
+        Car newCar = new Car(UUID.randomUUID().toString(), car.getBrand(), car.getModel());
+        return carRepo.save(newCar);
     }
 
     public List<Car> findAllCars() {

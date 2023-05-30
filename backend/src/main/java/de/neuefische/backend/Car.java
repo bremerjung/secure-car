@@ -1,16 +1,21 @@
 package de.neuefische.backend;
 
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.With;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-
+@Data
 @With
 @Document("Cars")
-public record Car(
+@AllArgsConstructor
+@NoArgsConstructor
+public class Car {
         @Id
-        String id,
-        String brand,
-        String model
-) {
+      private String id;
+      private String brand;
+      private String model;
+
 }
