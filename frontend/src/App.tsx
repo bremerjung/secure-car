@@ -1,9 +1,10 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import './App.css';
-import axios from "axios";
+
 import {Route, Routes} from "react-router-dom";
 import Homepage from "./components/Homepage";
 import CarGallery from "./components/CarGallery";
+import AddCar from "./components/AddCar";
 
 export type Car = {
     id: string,
@@ -13,24 +14,14 @@ export type Car = {
 
 function App() {
 
-    const [cars, setCars] = React.useState<Car[]>([]);
-
-    const getData = () => {
-        axios.get("/api/cars").then((response) => {
-            setCars(response.data);
-        })
-    }
-
-    useEffect(getData, [])
 
     return (
         <div className="App">
             <header className="App-header">
-                <h1>CARS</h1>
-                <h2>ADDING CAR:</h2>
                 <Routes>
                     <Route path={"/"} element={<Homepage/>}/>
-                    <Route path={"/cars"} element={<CarGallery cars={cars}/>}/>
+                    <Route path={"/add-car"} element={<AddCar/>}/>
+                    <Route path={"/cars"} element={<CarGallery/>}/>
                 </Routes>
             </header>
         </div>
