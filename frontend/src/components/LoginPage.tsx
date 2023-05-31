@@ -7,6 +7,7 @@ function LoginPage() {
     const [password, setPassword] = useState("");
 
     function loginOnSubmit(e: FormEvent<HTMLFormElement>) {
+        e.preventDefault()
         axios.post("/user/login", undefined, {auth: {username, password}})
             .then(r => console.log(r.data))
     }
